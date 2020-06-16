@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 API_VERSION = "2"
-BOX_NAME    = "russmckendrick/centos75"
+BOX_NAME    = "mjuenemann/centos75"
 BOX_IP      = "10.20.30.40"
 DOMAIN      = "nip.io"
 PRIVATE_KEY = "~/.ssh/id_rsa"
@@ -16,6 +16,8 @@ Vagrant.configure(API_VERSION) do |config|
   config.ssh.insert_key = false
   config.ssh.private_key_path = [PRIVATE_KEY, "~/.vagrant.d/insecure_private_key"]
   config.vm.provision "file", source: PUBLIC_KEY, destination: "~/.ssh/authorized_keys"
+  
+  
 
   config.vm.provider "virtualbox" do |v|
     v.memory = "2024"
