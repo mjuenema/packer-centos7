@@ -1,21 +1,17 @@
 # Packer CentOS 7
 
-Packer config for the boxes which can be found at [https://app.vagrantup.com/russmckendrick/boxes/centos75](https://app.vagrantup.com/russmckendrick/boxes/centos75).
+Customised version of [https://github.com/russmckendrick/packer-centos7](https://github.com/russmckendrick/packer-centos7) 
+because it is easier to copy someone else's work than to start from scratch. Thanks Russ!
 
-To build both Virtualbox and VMWare boxes run;
+The created CentOS 7 VMWare virtual machine is customised towards my personal needs. I have no ambition of 
+
+Differences to the upstream repository are:
+* I don't use VirtualBox so I dropped it.
+* Added a script to install Docker and Docker-Compose.
+* Simpler partitioning scheme. 
 
 ```
 packer build CentOS_7.json
 ```
 
-For just VMWare;
-
-```
-packer build -only vmware-iso CentOS_7.json
-```
-
-And for Virtualbox;
-
-```
-packer build -only virtualbox-iso CentOS_7.json
-```
+Markus Juenemann, June 2020
